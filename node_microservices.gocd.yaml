@@ -71,10 +71,10 @@ pipelines:
             test:
               artifacts:
                 - build:
-                    source: report_dev.html
+                    source: report_DEV.html
                     destination: test-output
               tabs:
-                testReport: test-output/report_dev.html
+                testReport: test-output/report_DEV.html
               tasks: *test-task
       - deploy-int:
           environment_variables:
@@ -89,10 +89,10 @@ pipelines:
             test:
               artifacts:
                 - build:
-                    source: report_int.html
+                    source: report_INT.html
                     destination: test-output
               tabs:
-                testReport: test-output/report_int.html
+                testReport: test-output/report_INT.html
               tasks: *deploy-task
       - deploy-prod:
           environment_variables:
@@ -107,8 +107,8 @@ pipelines:
             test:
               artifacts:
                 - build:
-                    source: report_prod.html
+                    source: report_PROD.html
                     destination: test-output
               tabs:
-                testReport: test-output/report_prod.html
+                testReport: test-output/report_PROD.html
               tasks: *deploy-task
