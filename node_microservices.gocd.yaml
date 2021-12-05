@@ -6,6 +6,7 @@ pipelines:
     materials:
       gitrepo:
         git: git@github.com:Sliceem/ci_course.git
+        branch: main
     stages:
       - build:
           jobs:
