@@ -93,7 +93,7 @@ pipelines:
                     destination: test-output
               tabs:
                 testReport: test-output/report_INT.html
-              tasks: *deploy-task
+              tasks: *test-task
       - deploy-prod:
           environment_variables:
             ENV_NAME: PROD
@@ -111,4 +111,4 @@ pipelines:
                     destination: test-output
               tabs:
                 testReport: test-output/report_PROD.html
-              tasks: *deploy-task
+              tasks: *test-task
