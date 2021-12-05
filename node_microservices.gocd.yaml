@@ -5,7 +5,7 @@ pipelines:
     group: microservice
     materials:
       gitrepo:
-        git: git@github.com:Sliceem/ci_course.git
+        git: https://github.com/Sliceem/ci_course.git
         branch: main
     stages:
       - build:
