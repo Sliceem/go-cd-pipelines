@@ -62,35 +62,53 @@ pipelines:
           environment_variables:
             ENV_NAME: DEV
           jobs:
-            build:
+            deploy:
               tasks: *deploy-task
       - test-dev:
           environment_variables:
             ENV_NAME: DEV
           jobs:
-            build:
+            test:
+              artifact:
+                - build:
+                    source: report_dev.html
+                    destination: test-output
+              tabs:
+                testReport: test-output/report_dev.html
               tasks: *test-task
       - deploy-int:
           environment_variables:
             ENV_NAME: INT
           jobs:
-            build:
+            deploy:
               tasks: *deploy-task
       - test-int:
           environment_variables:
             ENV_NAME: INT
           jobs:
-            build:
+            test:
+              artifact:
+                - build:
+                    source: report_dev.html
+                    destination: test-output
+              tabs:
+                testReport: test-output/report_dev.html
               tasks: *deploy-task
       - deploy-prod:
           environment_variables:
             ENV_NAME: PROD
           jobs:
-            build:
+            deploy:
               tasks: *deploy-task
       - test-prod:
           environment_variables:
             ENV_NAME: PROD
           jobs:
-            build:
+            test:
+              artifact:
+                - build:
+                    source: report_dev.html
+                    destination: test-output
+              tabs:
+                testReport: test-output/report_dev.html
               tasks: *deploy-task
